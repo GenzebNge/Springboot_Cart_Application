@@ -21,7 +21,8 @@ public class HelloReceiver {
         Gson gson = new Gson();
         Item item = gson.fromJson(s, Item.class);
 
-        itemService.save(item);
+        item = itemService.save(item);
+        System.out.printf("Item Saved id %d%n", item.getId());
 
         latch.countDown();
     }

@@ -27,16 +27,16 @@ public class CartServiceTest {
 
     @Before
     public void init() {
-        cart = new Cart();
-        testItem1 = new Item()
-                .withName("Popcorn")
-                .withPrice(12.34)
-                .withQuantity(2);
-        testItem2 = new Item()
-                .withName("Cola")
-                .withPrice(1.34)
-                .withQuantity(1);
-        cart.setItems(Arrays.asList(testItem1, testItem2));
+//        cart = new Cart();
+//        testItem1 = new Item()
+//                .withName("Popcorn")
+//                .withPrice(12.34)
+//                .withQuantity(2);
+//        testItem2 = new Item()
+//                .withName("Cola")
+//                .withPrice(1.34)
+//                .withQuantity(1);
+//        cart.setItems(Arrays.asList(testItem1, testItem2));
     }
 
     @Test
