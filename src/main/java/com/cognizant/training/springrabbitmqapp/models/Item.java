@@ -3,15 +3,17 @@ package com.cognizant.training.springrabbitmqapp.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class Item {
+public class Item implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
     private String name;
     private double price;
-    private int quantity;
+    //private int quantity;
+    private boolean onSale;
 
     public Item withId(Long id) {
         setId(id);
@@ -28,10 +30,15 @@ public class Item {
         return this;
     }
 
-    public Item withQuantity(int quantity) {
-        setQuantity(quantity);
+    public Item withOnSale(boolean onSale) {
+        setOnSale(onSale);
         return this;
     }
+
+//    public Item withQuantity(int quantity) {
+//        setQuantity(quantity);
+//        return this;
+//    }
 
     public Long getId() {
         return id;
@@ -57,11 +64,29 @@ public class Item {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
+//    public int getQuantity() {
+//        return quantity;
+//    }
+//
+//    public void setQuantity(int quantity) {
+//        this.quantity = quantity;
+//    }
+
+    public boolean isOnSale() {
+        return onSale;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setOnSale(boolean onSale) {
+        this.onSale = onSale;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", onSale=" + onSale +
+                '}';
     }
 }
