@@ -13,7 +13,7 @@ public class CartService {
     private CartRepository cartRepository;
 
     public Cart save(Cart newCart) {
-        return null;
+        return cartRepository.save(newCart);
     }
 
     public List<Cart> getAll() {

@@ -1,19 +1,30 @@
 package com.cognizant.training.springrabbitmqapp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Cart {
+    @Id
+    @GeneratedValue
+    private Long id;
     @OneToMany
-    private ArrayList<Item> items;
+    private List<Item> items;
 
-    public ArrayList<Item> getItems() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Item> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<Item> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 }
